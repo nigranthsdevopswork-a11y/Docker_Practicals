@@ -1,21 +1,172 @@
-# Nginx Static Website Deployment
+# 🐳 Docker Basic Commands Guide
 
-## 📌 Project Overview
-This project shows how to deploy a static website using Nginx Docker container.
+## 📌 Overview
 
-## 🚀 Steps to Run
+This repository contains essential Docker commands for beginners.
+It helps you understand how to work with images, containers, volumes, and Docker Compose.
 
-1. Pull nginx image
-   docker pull nginx
+---
 
-2. Run container
-   docker run -d -p 8080:80 nginx
+## 🔹 1. Check Docker Installation
 
-3. Copy website files
-   docker cp index.html container_id:/usr/share/nginx/html/
+```bash
+docker --version
+```
 
-## 📸 Screenshots
-(Add images here)
+---
+
+## 🔹 2. Work with Images
+
+### Pull an image from Docker Hub
+
+```bash
+docker pull nginx
+```
+
+### List downloaded images
+
+```bash
+docker images
+```
+
+### Remove an image
+
+```bash
+docker rmi nginx
+```
+
+---
+
+## 🔹 3. Work with Containers
+
+### Run a container
+
+```bash
+docker run nginx
+```
+
+### Run in detached mode (background)
+
+```bash
+docker run -d nginx
+```
+
+### Run with port mapping
+
+```bash
+docker run -d -p 8080:80 nginx
+```
+
+### List running containers
+
+```bash
+docker ps
+```
+
+### List all containers (including stopped)
+
+```bash
+docker ps -a
+```
+
+### Stop a container
+
+```bash
+docker stop <container_id>
+```
+
+### Start a stopped container
+
+```bash
+docker start <container_id>
+```
+
+### Remove a container
+
+```bash
+docker rm <container_id>
+```
+
+---
+
+## 🔹 4. Inspect & Logs
+
+### View logs
+
+```bash
+docker logs <container_id>
+```
+
+### Inspect container details
+
+```bash
+docker inspect <container_id>
+```
+
+---
+
+## 🔹 5. Execute Commands Inside Container
+
+```bash
+docker exec -it <container_id> /bin/bash
+```
+
+---
+
+## 🔹 6. Build Your Own Image
+
+### Build from Dockerfile
+
+```bash
+docker build -t myapp .
+```
+
+---
+
+## 🔹 7. Volumes (Data Persistence)
+
+### Create a volume
+
+```bash
+docker volume create myvolume
+```
+
+### Run container with volume
+
+```bash
+docker run -d -v myvolume:/data nginx
+```
+
+---
+
+## 🔹 8. Clean Up
+
+### Remove unused Docker resources
+
+```bash
+docker system prune
+```
+
+---
+
+## 🔹 9. Docker Compose (Multi-Container Apps)
+
+### Start services
+
+```bash
+docker-compose up
+```
+
+### Stop services
+
+```bash
+docker-compose down
+```
+
+---
 
 ## 👨‍💻 Author
+
 Your Name
+
+---
