@@ -1,25 +1,10 @@
 # 🐳 Docker Volume Practical
 
-## 📌 Objective
-
-To understand how Docker volumes work and how they provide **data persistence** even after container deletion.
-
----
-
 ## 🧠 What is Docker Volume?
 
 Docker volume is a storage mechanism used to **persist data outside the container**.
 It ensures that data is not lost when a container is stopped or deleted.
-
 ---
-
-## ⚙️ Prerequisites
-
-* Docker installed on system
-* Basic knowledge of Docker commands
-
----
-
 ## 🚀 Steps Performed
 
 ### 🔹 Step 1: Create a Docker Volume
