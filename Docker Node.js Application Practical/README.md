@@ -1,13 +1,13 @@
-🔹 STEP 1: CREATE PROJECT DIRECTORY
+ 🚀 Step-by-Step Implementation
+🔹 Step 1: Create Project Directory
+
+```bash
 mkdir nodeapp
 cd nodeapp
-
-👉 This creates your project folder
-
-🔹 STEP 2: CREATE NODE.JS APPLICATION
+🔹 Step 2: Create Node.js Application
 vim app.js
 
-Add below code:
+Add the following code:
 
 const http = require("http");
 
@@ -19,13 +19,10 @@ const server = http.createServer((req, res) => {
 server.listen(3000, () => {
   console.log("Server running on port 3000");
 });
-
-👉 Simple HTTP server
-
-🔹 STEP 3: CREATE package.json
+🔹 Step 3: Create package.json
 vim package.json
 
-Add this:
+Add the following content:
 
 {
   "name": "node-docker-app",
@@ -35,13 +32,10 @@ Add this:
     "start": "node app.js"
   }
 }
-
-👉 Defines app metadata and start script
-
-🔹 STEP 4: CREATE DOCKERFILE
+🔹 Step 4: Create Dockerfile
 vim Dockerfile
 
-Add below content:
+Add the following instructions:
 
 FROM node:18
 
@@ -55,65 +49,45 @@ COPY . .
 EXPOSE 3000
 
 CMD ["npm", "start"]
-
-👉 Explanation:
-
-FROM node:18 → Base image
-WORKDIR → Working directory
-COPY → Files copy
-RUN npm install → Install dependencies
-EXPOSE 3000 → Port
-CMD → Start app
-🔹 STEP 5: BUILD DOCKER IMAGE
+🔹 Step 5: Build Docker Image
 docker build -t node_image .
 
-👉 Builds Docker image
-
-Check images:
+Verify image:
 
 docker images
-🔹 STEP 6: RUN CONTAINER
+🔹 Step 6: Run Docker Container
 docker run -d -p 3000:3000 --name node_container node_image
-
-👉 Explanation:
-
--d → Run in background
--p 3000:3000 → Port mapping
---name → Container name
-🔹 STEP 7: VERIFY CONTAINER
+🔹 Step 7: Verify Running Container
 docker ps
+🌐 Step 8: Access Application
 
-👉 Check running container
-
-🌐 STEP 8: ACCESS APPLICATION
-
-Open browser:
+Open your browser and visit:
 
 http://<your-ec2-public-ip>:3000
 
-👉 Output:
+Expected Output:
 
 Hello from Node.js Docker App 🚀
-📸 SCREENSHOTS
+📸 Screenshots
 
-(Add your screenshots here)
+Create a folder named Screenshots and add images:
 
 Screenshots/
 ├── build.png
 ├── run.png
 ├── output.png
+
+Add in README:
+
 ![Build](Screenshots/build.png)
 ![Run](Screenshots/run.png)
 ![Output](Screenshots/output.png)
-📌 OUTPUT COMMANDS
-docker build -t node_image .
-docker run -d -p 3000:3000 node_image
-🎯 KEY LEARNING
-Node.js app ko Docker me containerize kiya
-Dockerfile ka use samjha
-Port mapping se browser me access kiya
-Containerized app deployment sikha
-📚 CONCLUSION
+📌 Key Learnings
+How to containerize a Node.js application
+Writing a Dockerfile
+Building Docker images
+Running containers with port mapping
+📚 Conclusion
 
-Docker + Node.js ek powerful combination hai
-Jo development aur deployment ko easy aur consistent banata hai
+Docker makes it easy to package and run applications in isolated environments.
+Using Node.js with Docker ensures consistency across development and production.
